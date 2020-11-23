@@ -246,6 +246,8 @@ target_include_directories(snappy
 set_target_properties(snappy
   PROPERTIES VERSION ${PROJECT_VERSION} SOVERSION ${PROJECT_VERSION_MAJOR})
 
+set_property(TARGET snappy PROPERTY POSITION_INDEPENDENT_CODE ON)
+
 target_compile_definitions(snappy PRIVATE -DHAVE_CONFIG_H)
 if(BUILD_SHARED_LIBS)
   set_target_properties(snappy PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS ON)
